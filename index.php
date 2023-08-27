@@ -7,6 +7,8 @@
 <?php
     if ($_SESSION['permission'] == 1){
         include "./components/users.ini.php";
+    }else{
+        include "./components/post.ini.php";
     }
 
 ?>

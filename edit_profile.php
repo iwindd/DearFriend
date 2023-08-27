@@ -8,7 +8,6 @@ if ($_POST) {
     $_image = $_SESSION['image'];
 
     unlink("images/$_image");
-
     
     $dir       = "images/";
     $imageName = uniqid() . '_' . mt_rand(1000, 9999);
