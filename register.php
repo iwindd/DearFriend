@@ -10,13 +10,15 @@ if ($_POST) {
     $name       = $_POST["name"];
     $password   = $_POST["password"];
 
-    if (strlen($_POST["password"]) <= 5) {
-        echo "error password length <= 5";
-    } else {
-        $sql = "INSERT INTO users (email, name, password) VALUES ('$email', '$name', '$password')";
+    $sql = "INSERT INTO users (email, name, password) VALUES ('$email', '$name', '$password')";
 
-        if (mysqli_query($conn, $sql)) {
-            header("location: login.php");
+    if (mysqli_query($conn, $sql)) {
+        header("location: login.php");
+    }else{
+        if (mysqli_errno($conn) == 1062){
+            echo "อีเมลนี้ถูกใช้ไปแล้ว";
+        }else{
+            echo "กรุณาลองอีกครั้งภายหลัง!";
         }
     }
 }
