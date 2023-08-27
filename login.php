@@ -18,6 +18,7 @@
             $_SESSION['email'] = $data['email'];
             $_SESSION['name'] = $data['name'];
             $_SESSION['permission'] = $data['permission'];
+            $_SESSION['image'] = $data['image'];
 
             header("location: index.php");
         }else{

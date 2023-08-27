@@ -9,7 +9,10 @@
         include "./components/users.ini.php";
     }
 
+?>
+<img src="images/<?=$_SESSION['image']?>">
 
+<?php
     echo $_SESSION['name'];
 ?>
 
